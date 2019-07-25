@@ -1,10 +1,10 @@
 import { React, useEffect } from "react"
-import useLocalStorage  from "./useLocalStorage"
+import useLocalStorage from "./useLocalStorage"
 import { AST_StatementWithBody } from "terser";
 
 const useDarkMode = () => {
 
-    const [darkModeStatus, setDarkModeStatus] = useLocalStorage(true)
+    const [darkModeStatus, setDarkModeStatus] = useLocalStorage('Dark Mode Enabled?')
 
     useEffect(() => {
         if (darkModeStatus === true) {
