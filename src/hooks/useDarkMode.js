@@ -1,5 +1,5 @@
 import { React, useEffect } from "react"
-import { useLocalStorage } from "./useLocalStorage"
+import useLocalStorage  from "./useLocalStorage"
 import { AST_StatementWithBody } from "terser";
 
 const useDarkMode = () => {
@@ -8,11 +8,13 @@ const useDarkMode = () => {
 
     useEffect(() => {
         if (darkModeStatus === true) {
-            body.classList.add('dark-mode')
+            document.body.classList.add('dark-mode')
         } else {
-            body.classList.remove('dark-mode')
+            document.body.classList.remove('dark-mode')
         }
-    }, [])
+    }, [darkModeStatus])
+
+    return [darkModeStatus, setDarkModeStatus]
 }
 
 export default useDarkMode
